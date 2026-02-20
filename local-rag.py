@@ -87,9 +87,24 @@
 #       python3 -m venv venv
 #       - On Windows: venv\Scripts\activate
 #       - On macOS/Linux: source venv/bin/activate
-#   d. Install dependencies:
-#       pip install -r requirements.txt
-#   e. Remember to set up your .env file with the API key on the new machine as well.
+#   c. Set up the .env file with your API key (if needed)
+#       - You can create the .env file manually or use the command line:
+#       # Note: Remember to add .env to .gitignore to avoid pushing sensitive information to GitHub.
+#       1. Activate your venv in PowerShell:
+#           .\venv\Scripts\Activate.ps1
+#       2. Create .env file with your API key:
+#           echo "OPENAI_API_KEY=your_openai_api_key_here" > .env
+#       3. Install dependencies:
+#           pip install -r requirements.txt
+#       4. Make sure Ollama server is running on the new machine (in another terminal):
+#           ollama serve
+#       5. Verify Ollama models are available:
+#           ollama list
+#       6. Pull required models (once)
+#           ollama pull nomic-embed-text
+#           ollama pull llama3.2:3b 
+#       7. Run your local RAG script:
+#           python .\local-rag\local-rag.py
 
 #   Step 12 Daily Workflow (All Inside VS Code)
 #   a. Pull latest changes from GitHub:
